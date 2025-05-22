@@ -51,7 +51,7 @@ When you create an S3 bucket, it is designed to be completely private by default
 But for a website, we *need* people to see it! So, I had to be very precise. I had to tell S3, "I want this specific bucket to be readable by the public, but ONLY in a controlled way." This required two careful steps:
 1.  **Adjusting the Main Lock:** I had to go into the bucket's BPA settings and specifically *uncheck* a couple of checkboxes. Think of this like deciding which specific doors in your vault *can* have a window added, without just throwing the whole vault wide open. This was a tricky part, as there are four checkboxes, and picking the right combination is key to balancing security and accessibility. After troubleshooting, gaining a deeper understanding of each security setting, I found the perfect balance by unchecking the third and fourth boxes.
     *The corrected security settings that allowed public access via policy:*
-    ![S3 Block Public Access Settings Corrected](images/s3-bpa-settings-corrected.jpg)
+    ![S3 Block Public Access Settings Corrected](images/s3-bpa-settings-corrected.png)
 2.  **Adding the "Public View" Permission (Bucket Policy):** Once the main lock was adjusted, I then added a **Bucket Policy**. This is like a very strict instruction manual that tells S3, "Allow *anyone* (`"Principal": "*"`), but *only* to *read* (`"s3:GetObject"`) the files in *this specific bucket* (`"Resource": [...]`)." This explicit policy opened a controlled "viewing window" to my website files.
     *Applying the specific bucket policy to grant public read access:*
     ![S3 Bucket Policy](images/s3-bucket-policy.png)
