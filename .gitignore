@@ -1,0 +1,15 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE / Editor specific files (uncomment if you use them)
+# .vscode/ # Uncomment if you use VS Code and want to ignore its project settings
+# .idea/   # Uncomment if you use IntelliJ/WebStorm
+# *.sublime-project
+# *.sublime-workspace
+
+# Temporary files / cache if generated locally
+*.log
+*.temp
